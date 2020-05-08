@@ -1,0 +1,29 @@
+
+{% block body %}
+{%  include "index.html"  %}
+{% if liste %}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ISBN</th>
+      <th scope="col">Kullanıcı Adı</th>
+      <th scope="col">Kitap Adı</th>
+   
+    </tr>
+  </thead>
+  <tbody>
+    {% for list  in liste  %}
+    <tr>
+      <td>{{list.ISBN}}</td>
+      <td>{{list.kullanici_ad}}</td>
+      <td>{{list.kitap_ad}}</td>
+      
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>   
+ {% endif %}
+    
+
+{% endblock body %}
+  

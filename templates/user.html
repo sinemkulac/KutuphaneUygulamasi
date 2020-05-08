@@ -1,0 +1,13 @@
+{% block body %}
+{% from "formhelpers.html" import render_field %}
+{%  include "index.html"  %}
+<form style=" margin: 10px 20px ;"  method=post>
+  <h3>Giriş Yap</h3>
+  <hr>
+  {{ render_field(form.name) }}
+  {{ render_field(form.password) }}
+  <br>
+  <button type="submit" class="btn btn-outline-success" href="/user">Giriş Yap</button>
+  <br>
+</form>
+{% endblock body %}

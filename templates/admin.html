@@ -1,0 +1,26 @@
+{% block body %}
+{% from "formhelpers.html" import render_field %}
+{%  include "index.html"  %}
+<p  style=" margin: 5px 5px ;">Kullanıcı: {{session["kullanici"]}}</p>
+<h5  style=" margin: 10px 5px ;">Kitap Ekle</h5>
+<hr>
+<form  style=" margin: 10px 20px ;" method=post enctype="multipart/form-data" >
+  {{ render_field(form.book_name) }}
+  
+  <button type="submit" class="btn btn-outline-success" href="/admin">Kitap Ekle</button>
+  <p>{{message}}</p>
+</form>
+<form  style=" margin: 10px 20px ;" action="/upload_image" method=post class="md-form" enctype="multipart/form-data">
+  <div class="file-field">
+    <div class="btn btn-outline-success btn-rounded waves-effect btn-sm float-left">
+      <input type=file name=file >
+      <button type="submit" class="btn btn-outline-success" action="/upload_image">Fotoğraf  Yükle</button>
+    </div>
+</form>
+<br><br>
+<hr>
+<a  style=" margin: 10px 3px ;" type="" href="/admin/liste" class="btn btn-outline-success">Kitap ve Kullanıcı Listele</a>
+<a  style=" margin: 10px 5px ;" type="" href="/admin/ertele" class="btn btn-outline-success">Zaman Ertele</a>
+<p  style=" margin: 10px 3px ;">Zaman: {{session["zaman"]}}</p>
+{% endblock body %}
+

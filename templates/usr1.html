@@ -1,0 +1,90 @@
+
+{% block body %}
+{%  include "index.html"  %}
+{% from "formhelpers.html" import render_field %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>kullanıcı sayfası</title>
+	
+</head>
+<body>
+
+
+	<p>Kullanıcı: {{deneme}}</p>
+	<br>
+	<br>
+	
+
+	<form style=" margin: 10px 20px ;" action = "/usrkitapara" method="post" >
+		<table>
+			<tr width = "500" height = 50 >
+				<td><input type="string" name="kitapAdı"></td>
+				<td><button type = "submit" class="btn btn-outline-success" > kitap ara</button></td>
+			</tr>
+		</table>
+
+	</form>
+	<form style=" margin: 10px 20px ;"  action = "/usrkitapal" method="post" >
+		<table>
+			<tr width = "500"   height = 50	>
+				<td  ><input type="string" name="kitapAdı"></td>
+				<td   ><button type = "submit" class="btn btn-outline-success" > kitap al</button></td>
+			</tr>
+		</table>
+
+	</form>
+
+	</form>
+	<form  style=" margin: 10px 20px ;" action="/usrkitapbırak" method=post class="md-form" enctype="multipart/form-data">
+		<div class="file-field">
+			<div class="btn btn-outline-success btn-rounded waves-effect btn-sm float-left">
+				<input type=file name=file >
+				<button type="submit" class="btn btn-outline-success" action="/upload_image">Kitap Bırak</button>
+			</div>
+	</form>
+
+	<br>
+	<br>	
+	<br>
+
+<div style=" margin: 50px 110px 130px 100px;">
+
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th scope="col">KİTAP</th>
+				<th scope="col">ISBN</th>
+				<th scope="col">BULUNMA DURUMU</th>
+		 
+			</tr>
+		</thead>
+		<tbody>
+			
+			<tr>
+				<td>{{KİTAP}}</td>
+				<td>{{ISBN}} </td>
+				<td>{{BULUNMA_DURUMU}}</td>
+				
+			</tr>
+		</tbody>
+	</table>   
+	</div>
+
+
+
+	<br>
+	<br>
+	
+</body>
+</html>
+
+{% endblock body %}
+
+
+
+
+
+
+
+
